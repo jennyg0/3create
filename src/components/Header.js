@@ -21,6 +21,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+import logo from "../logo.jpeg";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -53,12 +54,13 @@ export default function WithSubnavigation() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+          <img src={logo} className="App-logo-header" alt="logo" />
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
-            Logo
+            3create
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
@@ -79,7 +81,7 @@ export default function WithSubnavigation() {
             variant={"link"}
             href={"#"}
           >
-            Sign In
+            Login
           </Button>
           <Button
             display={{ base: "none", md: "inline-flex" }}
