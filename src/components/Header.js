@@ -22,9 +22,11 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import logo from "../logo.jpeg";
+import { ConnectButton, useAccount } from "@web3modal/react";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
+  const { isConnected } = useAccount();
 
   return (
     <Box>
@@ -74,7 +76,7 @@ export default function WithSubnavigation() {
           direction={"row"}
           spacing={6}
         >
-          <Button
+          {/* <Button
             as={"a"}
             fontSize={"sm"}
             fontWeight={400}
@@ -82,7 +84,10 @@ export default function WithSubnavigation() {
             href={"#"}
           >
             Login
-          </Button>
+          </Button> */}
+          <div>
+            <ConnectButton />
+          </div>
           <Button
             display={{ base: "none", md: "inline-flex" }}
             fontSize={"sm"}
