@@ -5,6 +5,7 @@ import { useAccount } from "@web3modal/react";
 import VerifyAge from "./components/AgeVerification";
 import { Network, Alchemy } from "alchemy-sdk";
 import SplitScreen from "./components/Hero";
+import SplitWithImage from "./components/Features";
 
 const settings = {
   apiKey: process.env.ALCHEMY_API_KEY,
@@ -26,6 +27,7 @@ function App() {
     <div className="App">
       <WithSubnavigation />
       <SplitScreen />
+      <SplitWithImage />
       {/* <VerifyAge /> */}
     </div>
   );

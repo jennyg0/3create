@@ -98,9 +98,7 @@ export default function WithSubnavigation() {
             _hover={{
               bg: "pink.300",
             }}
-          >
-            Sign Up
-          </Button>
+          ></Button>
         </Stack>
       </Flex>
 
