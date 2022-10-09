@@ -24,9 +24,15 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+## Medium Article
+
+https://medium.com/@vaidasa/3create-1st-web3-education-platform-for-kids-60c5415097a4
+
 ### Technical Bounties
 
 ## Ethereum Foundation Inclusion
+
+The Next Billion of users will be children. We enable access to the for a previously unserved group that will be the future of Web3 through Proof of Childhood (privacy) and scaling to new groups of users.
 
 ## Polygon ID
 
@@ -44,3 +50,8 @@ https://github.com/jennyg0/3create/blob/main/src/index.js
 
 We used Optimism Layer 2 in order to issue NFT badges after kids complete certain courses - or "levels" - to keep the security of Ethereum and give children a chance to familiarize themselves with wider Ethereum ecosystem while also decreasing the costs and increasing the responsiveness of gamified NFT rewards inside our app.
 https://github.com/janlanecki/3create-airdrop/
+
+## Livepeer
+
+Livepeer is used to host videos for our educational content and live streaming for mentors to teach groups of students. It is important to have this for learners to access the most up to date content.
+https://github.com/jennyg0/3create/blob/main/src/player.js
