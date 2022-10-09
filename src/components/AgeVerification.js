@@ -52,52 +52,46 @@ const qrProofRequestJson = {
   },
 };
 
-export default class VerifyAge extends React.Component {
-  componentDidMount() {}
+export default function VerifyAge() {
+  return (
+    <div style={styles.root}>
+      <h2 style={styles.title}>
+        Claim an ERC20 zk airdrop on Polygon Mumbai for 3create!
+      </h2>
+      <p>Age verification: You must prove you are under 14 to claim</p>
+      <p>
+        Complete age verification by issuing yourself a Polygon ID claim via{" "}
+        <a
+          href="https://polygontechnology.notion.site/Issue-yourself-a-KYC-Age-Credential-claim-a06a6fe048c34115a3d22d7d1ea315ea"
+          target="_blank"
+        >
+          KYC Age Credentials
+        </a>
+        then scan QR code within Polygon ID app to claim your 3create token!
+      </p>
 
-  render() {
-    return (
-      <div style={styles.root}>
-        <h2 style={styles.title}>
-          Claim an ERC20 zk airdrop on Polygon Mumbai
-        </h2>
-        <p>Age verification: You must prove you are under 14 to claim</p>
-        <p>
-          Complete age verification by issuing yourself a Polygon ID claim via{" "}
-          <a
-            href="https://polygontechnology.notion.site/Issue-yourself-a-KYC-Age-Credential-claim-a06a6fe048c34115a3d22d7d1ea315ea"
-            target="_blank"
-          >
-            KYC Age Credentials
-          </a>
-          then scan QR code within Polygon ID app to claim your 3create token!
-        </p>
-
-        <div style={{ align: "center" }}>
-          <QRCodeSVG level="Q" value={JSON.stringify(qrProofRequestJson)} />
-        </div>
-        <br />
-        <p>
-          Github:{" "}
-          <a
-            href="https://github.com/oceans404/tutorial-examples/tree/main/on-chain-verification"
-            target="_blank"
-          >
-            On-chain verification tutorial
-          </a>
-        </p>
-        <p>
-          Polygonscan:{" "}
-          <a
-            href={`https://mumbai.polygonscan.com/token/${deployedContractAddress}`}
-            target="_blank"
-          >
-            Token 3create
-          </a>
-        </p>
+      <div style={{ align: "center" }}>
+        <QRCodeSVG level="Q" value={JSON.stringify(qrProofRequestJson)} />
       </div>
-    );
-  }
+      <br />
+      <p>
+        Github:{" "}
+        <a
+          href="https://github.com/oceans404/tutorial-examples/tree/main/on-chain-verification"
+          target="_blank"
+        >
+          On-chain verification tutorial
+        </a>
+      </p>
+      <p>
+        Polygonscan:{" "}
+        <a
+          href={`https://mumbai.polygonscan.com/token/${deployedContractAddress}`}
+          target="_blank"
+        >
+          Token 3create
+        </a>
+      </p>
+    </div>
+  );
 }
-
-render(<VerifyAge />, document.getElementById("root"));
