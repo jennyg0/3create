@@ -3,8 +3,8 @@ import WithSubnavigation from "./components/Header";
 import SidebarWithHeader from "./components/HeaderLoggedIn";
 import { useAccount } from "@web3modal/react";
 import VerifyAge from "./components/AgeVerification";
-
 import { Network, Alchemy } from "alchemy-sdk";
+import SplitScreen from "./components/Hero";
 
 const settings = {
   apiKey: process.env.ALCHEMY_API_KEY,
@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <WithSubnavigation />
-      <header className="App-header">Learn Create Solve</header>
+      <SplitScreen />
       {/* <VerifyAge /> */}
     </div>
   );

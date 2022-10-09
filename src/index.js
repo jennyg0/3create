@@ -12,7 +12,6 @@ const config = {
   accentColor: "teal",
   ethereum: {
     appName: "3create",
-    chains: [80001, "Polygon Mumbai", "eip155:80001"],
   },
 };
 
