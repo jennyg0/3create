@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   IconButton,
   Avatar,
@@ -32,10 +32,13 @@ import {
   FiBell,
   FiChevronDown,
 } from "react-icons/fi";
+import { useDisconnect } from "@web3modal/react";
+import logo from "../logo.jpeg";
+import { Network, Alchemy } from "alchemy-sdk";
 
 const LinkItems = [
   { name: "Home", icon: FiHome },
-  { name: "Trending", icon: FiTrendingUp },
+  { name: "Popular Courses", icon: FiTrendingUp },
   { name: "Explore", icon: FiCompass },
   { name: "Favourites", icon: FiStar },
   { name: "Settings", icon: FiSettings },
@@ -84,9 +87,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
       {...rest}
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo
-        </Text>
+        <img src={logo} className="App-logo-header" alt="logo" />
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
@@ -135,6 +136,27 @@ const NavItem = ({ icon, children, ...rest }) => {
 };
 
 const MobileNav = ({ onOpen, ...rest }) => {
+  const disconnect = useDisconnect();
+  const [isChild, setIsChild] = useState(false);
+
+  useEffect(() => {
+    const settings = {
+      apiKey: process.env.ALCHEMY_API_KEY,
+      network: Network.MATIC_MUMBAI,
+    };
+    const alchemy = new Alchemy(settings);
+
+    const userAddress = "0x31e2D52aE5A0760E2f9cab4D388Ba1F457814275";
+    const createTokenContract = "0x45c53da2Af0a7e7d818a494576a9E2C57E811f36";
+
+    alchemy.core
+      .getTokenBalances(userAddress, [createTokenContract])
+      .then((res) => {
+        //check if they have a token in their wallet
+        setIsChild(parseInt(res.tokenBalances[0].tokenBalance) > 0);
+      });
+  }, []);
+
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -147,6 +169,11 @@ const MobileNav = ({ onOpen, ...rest }) => {
       justifyContent={{ base: "space-between", md: "flex-end" }}
       {...rest}
     >
+      <div style={{ marginRight: "3rem" }}>
+        {isChild
+          ? "You are verified with Proof of Childhood"
+          : " Please verify Proof of Childhood with PolygonID"}
+      </div>
       <IconButton
         display={{ base: "flex", md: "none" }}
         onClick={onOpen}
@@ -154,23 +181,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
         aria-label="open menu"
         icon={<FiMenu />}
       />
-
-      <Text
-        display={{ base: "flex", md: "none" }}
-        fontSize="2xl"
-        fontFamily="monospace"
-        fontWeight="bold"
-      >
-        Logo
-      </Text>
-
       <HStack spacing={{ base: "0", md: "6" }}>
-        <IconButton
-          size="lg"
-          variant="ghost"
-          aria-label="open menu"
-          icon={<FiBell />}
-        />
         <Flex alignItems={"center"}>
           <Menu>
             <MenuButton
@@ -193,7 +204,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                 >
                   <Text fontSize="sm">Justina Clark</Text>
                   <Text fontSize="xs" color="gray.600">
-                    Admin
+                    Student
                   </Text>
                 </VStack>
                 <Box display={{ base: "none", md: "flex" }}>
@@ -207,9 +218,16 @@ const MobileNav = ({ onOpen, ...rest }) => {
             >
               <MenuItem>Profile</MenuItem>
               <MenuItem>Settings</MenuItem>
-              <MenuItem>Billing</MenuItem>
               <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
+              <MenuItem>
+                <button
+                  onClick={disconnect}
+                  type="button"
+                  className="disconnect"
+                >
+                  Disconnect Wallet
+                </button>
+              </MenuItem>
             </MenuList>
           </Menu>
         </Flex>

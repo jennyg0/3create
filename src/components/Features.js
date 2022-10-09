@@ -38,11 +38,11 @@ const Feature = ({ text, icon, iconBg }) => {
 export default function SplitWithImage() {
   return (
     <Container maxW={"5xl"} py={12}>
+      <Heading style={{ marginBottom: "4rem" }}>
+        We are a platform that makes learning web3 easy for kids.
+      </Heading>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-        <Stack spacing={4}>
-          <Heading>
-            We are a club that makes learning web3 easy for kids.
-          </Heading>
+        <Stack spacing={4} style={{ marginLeft: "2rem", textAlign: "left" }}>
           <Text color={"gray.500"} fontSize={"lg"}>
             This is a space that is safe, fun and vibrant for our future
             generations to grow, create and move with ease in Web3.
@@ -56,12 +56,13 @@ export default function SplitWithImage() {
         </Stack>
         <Flex>
           <Stack
-            spacing={6}
+            spacing={4}
             divider={
               <StackDivider
                 borderColor={useColorModeValue("gray.100", "gray.700")}
               />
             }
+            style={{ marginLeft: "5rem" }}
           >
             <Feature
               icon={
