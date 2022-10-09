@@ -54,4 +54,4 @@ https://github.com/janlanecki/3create-airdrop/
 ## Livepeer
 
 Livepeer is used to host videos for our educational content and live streaming for mentors to teach groups of students. It is important to have this for learners to access the most up to date content.
-https://github.com/jennyg0/3create/blob/main/src/player.js
+https://github.com/jennyg0/3create/blob/main/src/PPlayer.js
