@@ -11,7 +11,8 @@ const config = {
   theme: "light",
   accentColor: "teal",
   ethereum: {
-    appName: "web3Modal",
+    appName: "3create",
+    chains: [80001, "Polygon Mumbai", "eip155:80001"],
   },
 };
 
