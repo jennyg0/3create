@@ -52,6 +52,7 @@ https://github.com/jennyg0/3create/blob/main/src/index.js
 
 We used Optimism Layer 2 in order to issue NFT badges after kids complete certain courses - or "levels" - to keep the security of Ethereum and give children a chance to familiarize themselves with wider Ethereum ecosystem while also decreasing the costs and increasing the responsiveness of gamified NFT rewards inside our app.
 https://github.com/janlanecki/3create-airdrop/
+Smart Contracts with creator NFTs:https://goerli-optimism.etherscan.io/address/0x1488175cbe4fb04e90e11785589a74ffb33cd025
 
 ## Livepeer
 
