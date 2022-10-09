@@ -38,6 +38,7 @@ import logo from "../images/shuggy.svg";
 import { Network, Alchemy } from "alchemy-sdk";
 import welcome from "../images/welcome.png";
 import complete from "../images/complete.png";
+import airdropNFT from "../contracts/airdrop";
 
 const LinkItems = [
   { name: "Home", icon: FiHome },
@@ -78,9 +79,19 @@ export default function Complete() {
       <Box ml={{ base: 0, md: 60 }}>
         <div>
           <img src={complete} className="welcome" alt="logo" />
-          <Button style={{ backgroundColor: "#BBB2FF" }}>
-            Mint your creator badge!
-          </Button>
+          <div style={{ marginLeft: "20rem" }}>
+            <Button
+              style={{ backgroundColor: "#BBB2FF" }}
+              onClick={airdropNFT()
+                .then(() => process.exit(0))
+                .catch((error) => {
+                  console.error(error);
+                  process.exit(1);
+                })}
+            >
+              Mint your creator badge!
+            </Button>
+          </div>
         </div>
       </Box>
     </Box>
@@ -149,7 +160,6 @@ const NavItem = ({ icon, children, ...rest }) => {
             as={icon}
           />
         )}
-        ssdsa
       </Flex>
     </Link>
   );
@@ -223,7 +233,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                   spacing="1px"
                   ml="2"
                 >
-                  <Text fontSize="sm">Justina Clark</Text>
+                  <Text fontSize="sm">Vitalik</Text>
                   <Text fontSize="xs" color="gray.600">
                     Student
                   </Text>
@@ -242,7 +252,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
               <MenuDivider />
               <MenuItem>
                 <button
-                  onClick={disconnect}
+                  onClick={() => disconnect()}
                   type="button"
                   className="disconnect"
                 >

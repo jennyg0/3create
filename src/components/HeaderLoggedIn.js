@@ -51,7 +51,6 @@ export default function SidebarWithHeader({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isWelcomePage, setIsWelcomePage] = useState(true);
 
-  console.log(isWelcomePage);
   return (
     <Box
       minH="100vh"
@@ -91,10 +90,8 @@ export default function SidebarWithHeader({ children }) {
         ) : (
           <div>
             <img src={question} className="welcome" alt="logo" />
-            <Link to="/mint">
-              <Button style={{ backgroundColor: "#BBB2FF" }} href="/mint">
-                Submit
-              </Button>
+            <Link href="/mint">
+              <Button style={{ backgroundColor: "#BBB2FF" }}>Submit</Button>
             </Link>
             <Button
               style={{
@@ -247,7 +244,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                   spacing="1px"
                   ml="2"
                 >
-                  <Text fontSize="sm">Justina Clark</Text>
+                  <Text fontSize="sm">Vitalik</Text>
                   <Text fontSize="xs" color="gray.600">
                     Student
                   </Text>
