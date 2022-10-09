@@ -1,5 +1,19 @@
 # Welcome to 3create
 
+Currently, as a parent, it is almost impossible to find any web3 education suitable for kids.
+
+At 3Create, we aim to fill this gap.
+
+We’re creating an environment where mistakes are turned into opportunities. We’re giving kids the chance to get lots of things wrong so that they can figure out what it means to be right. We’re designing experiences that are complex yet welcoming, collaborative yet competitive. Experiences that are highly engaging, centered on the student, and designed to help kids understand high-level concepts while navigating the complexities of web3.
+
+Our goal is to help students collaborate more effectively and become better equipped to solve complex web3 problems than anyone (adults included).
+
+By applying an easy-to-use blockchain wallet, programmable digital objects, and 3D virtual spaces where students can collaborate and play, we are creating the next generation of web3 builders.
+
+Through transferrable credentials, the learning is fractionalized and kids now can build their portfolio and proof of skills. Publishing an article, coding, writing, giving a talk, etc. A portfolio of skills can be made and updated in real time.
+
+Finally, the whole process is gamified with on-chain badges that show progress and unlock new tracks as you not only complete the challenges but also support and help other kids. Once you earn enough badges qualifying you for "mastery", you can start earning social tokens by mentoring other learners.
+
 URL: https://3create.vercel.app/
 
 ### `npm run start`
