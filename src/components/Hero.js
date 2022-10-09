@@ -11,7 +11,7 @@ import mascot from "../images/shuggyandbrowser.svg";
 
 export default function SplitScreen() {
   return (
-    <div className="hero">
+    <div>
       <Stack minH={"100vh"} direction={{ base: "column", md: "row" }}>
         <Flex p={8} flex={1} align={"center"} justify={"center"}>
           <Stack spacing={6} w={"full"} maxW={"lg"}>
@@ -30,7 +30,7 @@ export default function SplitScreen() {
               through collaboration, learning challenges, problem solving, and
               creativity.
             </Text>
-            <Stack direction={{ base: "column", md: "row" }} spacing={4}>
+            {/* <Stack direction={{ base: "column", md: "row" }} spacing={4}>
               <Button
                 rounded={"full"}
                 bg={"blue.400"}
@@ -42,7 +42,7 @@ export default function SplitScreen() {
                 Start
               </Button>
               <Button rounded={"full"}>How It Works</Button>
-            </Stack>
+            </Stack> */}
           </Stack>
         </Flex>
         <Flex flex={1}>

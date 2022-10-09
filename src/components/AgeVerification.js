@@ -38,7 +38,7 @@ const qrProofRequestJson = {
             allowed_issuers: ["*"],
             req: {
               birthday: {
-                $lt: 20080101,
+                $gt: 20080101,
               },
             },
             schema: {
@@ -61,10 +61,7 @@ export default class VerifyAge extends React.Component {
         <h2 style={styles.title}>
           Claim an ERC20 zk airdrop on Polygon Mumbai
         </h2>
-        <p>
-          Age verification: You must prove your date of birth was before Jan 1,
-          2001 to claim.
-        </p>
+        <p>Age verification: You must prove you are under 14 to claim</p>
         <p>
           Complete age verification by issuing yourself a Polygon ID claim via{" "}
           <a
@@ -72,16 +69,12 @@ export default class VerifyAge extends React.Component {
             target="_blank"
           >
             KYC Age Credentials
-          </a>{" "}
-          then scan QR code within Polygon ID app to claim tokens
+          </a>
+          then scan QR code within Polygon ID app to claim your 3create token!
         </p>
 
         <div>
-          <QRCodeSVG
-            level="Q"
-            style={{ height: 500 }}
-            value={JSON.stringify(qrProofRequestJson)}
-          />
+          <QRCodeSVG level="Q" value={JSON.stringify(qrProofRequestJson)} />
         </div>
         <br />
         <p>
@@ -99,7 +92,7 @@ export default class VerifyAge extends React.Component {
             href={`https://mumbai.polygonscan.com/token/${deployedContractAddress}`}
             target="_blank"
           >
-            Token ERC20zkAirdrop
+            Token 3create
           </a>
         </p>
       </div>

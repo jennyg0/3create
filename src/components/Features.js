@@ -19,19 +19,21 @@ import { ReactElement } from "react";
 
 const Feature = ({ text, icon, iconBg }) => {
   return (
-    <Stack direction={"row"} align={"right"}>
-      <Flex
-        w={8}
-        h={8}
-        align={"center"}
-        justify={"center"}
-        rounded={"full"}
-        bg={iconBg}
-      >
-        {icon}
-      </Flex>
-      <Text fontWeight={600}>{text}</Text>
-    </Stack>
+    <div className="Feature">
+      <Stack direction={"row"} align={"right"}>
+        <Flex
+          w={8}
+          h={8}
+          align={"center"}
+          justify={"center"}
+          rounded={"full"}
+          bg={iconBg}
+        >
+          {icon}
+        </Flex>
+        <Text fontWeight={600}>{text}</Text>
+      </Stack>
+    </div>
   );
 };
 

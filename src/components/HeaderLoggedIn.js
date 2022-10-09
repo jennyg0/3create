@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   IconButton,
   Avatar,
+  Button,
   Box,
   CloseButton,
   Flex,
@@ -33,8 +34,9 @@ import {
   FiChevronDown,
 } from "react-icons/fi";
 import { useDisconnect } from "@web3modal/react";
-import logo from "../logo.jpeg";
+import logo from "../images/shuggy.svg";
 import { Network, Alchemy } from "alchemy-sdk";
+import welcome from "../images/welcome.png";
 
 const LinkItems = [
   { name: "Home", icon: FiHome },
@@ -47,7 +49,11 @@ const LinkItems = [
 export default function SidebarWithHeader({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
+    <Box
+      minH="100vh"
+      bg={useColorModeValue("gray.100", "gray.900")}
+      style={{ backgroundColor: "#aef398" }}
+    >
       <SidebarContent
         onClose={() => onClose}
         display={{ base: "none", md: "block" }}
@@ -67,8 +73,11 @@ export default function SidebarWithHeader({ children }) {
       </Drawer>
       {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
-        {children}
+      <Box ml={{ base: 0, md: 60 }}>
+        <img src={welcome} className="welcome" alt="logo" />
+        <Button style={{ marginTop: "2rem", backgroundColor: "#BBB2FF" }}>
+          Let's Learn!
+        </Button>
       </Box>
     </Box>
   );
@@ -84,10 +93,17 @@ const SidebarContent = ({ onClose, ...rest }) => {
       w={{ base: "full", md: 60 }}
       pos="fixed"
       h="full"
+      style={{ backgroundColor: "#fefbd4" }}
       {...rest}
     >
-      <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <img src={logo} className="App-logo-header" alt="logo" />
+      <Flex h="20" alignItems="center" mx="8">
+        <img
+          src={logo}
+          className="App-logo-header"
+          alt="logo"
+          style={{ borderRadius: "50%" }}
+        />
+        <div style={{ marginLeft: "1rem" }}>3create</div>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
@@ -114,7 +130,7 @@ const NavItem = ({ icon, children, ...rest }) => {
         role="group"
         cursor="pointer"
         _hover={{
-          bg: "cyan.400",
+          bg: "#aef398",
           color: "white",
         }}
         {...rest}
@@ -167,6 +183,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
       borderBottomWidth="1px"
       borderBottomColor={useColorModeValue("gray.200", "gray.700")}
       justifyContent={{ base: "space-between", md: "flex-end" }}
+      style={{ backgroundColor: "#fefbd4" }}
       {...rest}
     >
       <div style={{ marginRight: "3rem" }}>
