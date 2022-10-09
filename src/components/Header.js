@@ -88,17 +88,6 @@ export default function WithSubnavigation() {
           <div>
             <ConnectButton />
           </div>
-          <Button
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"pink.400"}
-            href={"#"}
-            _hover={{
-              bg: "pink.300",
-            }}
-          ></Button>
         </Stack>
       </Flex>
 

@@ -37,7 +37,7 @@ import { useDisconnect } from "@web3modal/react";
 import logo from "../images/shuggy.svg";
 import { Network, Alchemy } from "alchemy-sdk";
 import welcome from "../images/welcome.png";
-import question from "../images/question.png";
+import complete from "../images/complete.png";
 
 const LinkItems = [
   { name: "Home", icon: FiHome },
@@ -47,16 +47,14 @@ const LinkItems = [
   { name: "Settings", icon: FiSettings },
 ];
 
-export default function SidebarWithHeader({ children }) {
+export default function Complete() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [isWelcomePage, setIsWelcomePage] = useState(true);
 
-  console.log(isWelcomePage);
   return (
     <Box
       minH="100vh"
       bg={useColorModeValue("gray.100", "gray.900")}
-      style={{ backgroundColor: "#aef398" }}
+      style={{ backgroundColor: "#fefbd4" }}
     >
       <SidebarContent
         onClose={() => onClose}
@@ -78,34 +76,12 @@ export default function SidebarWithHeader({ children }) {
       {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }}>
-        {isWelcomePage ? (
-          <div>
-            <img src={welcome} className="welcome" alt="logo" />
-            <Button
-              style={{ backgroundColor: "#BBB2FF" }}
-              onClick={() => setIsWelcomePage(false)}
-            >
-              Let's Learn!
-            </Button>
-          </div>
-        ) : (
-          <div>
-            <img src={question} className="welcome" alt="logo" />
-            <Link to="/mint">
-              <Button style={{ backgroundColor: "#BBB2FF" }} href="/mint">
-                Submit
-              </Button>
-            </Link>
-            <Button
-              style={{
-                backgroundColor: "#BBB2FF",
-                marginLeft: "2rem",
-              }}
-            >
-              Ask a mentor
-            </Button>
-          </div>
-        )}
+        <div>
+          <img src={complete} className="welcome" alt="logo" />
+          <Button style={{ backgroundColor: "#BBB2FF" }}>
+            Mint your creator badge!
+          </Button>
+        </div>
       </Box>
     </Box>
   );
@@ -173,7 +149,7 @@ const NavItem = ({ icon, children, ...rest }) => {
             as={icon}
           />
         )}
-        {children}
+        ssdsa
       </Flex>
     </Link>
   );

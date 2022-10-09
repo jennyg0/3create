@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Web3Modal } from "@web3modal/react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const config = {
   projectId: "9338b83ff89083cd0ee7da8cea475c23",
@@ -30,6 +31,7 @@ root.render(
   <ChakraProvider>
     <React.StrictMode>
       <App />
+
       <Web3Modal config={config} />
     </React.StrictMode>
   </ChakraProvider>

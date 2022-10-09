@@ -73,7 +73,7 @@ export default class VerifyAge extends React.Component {
           then scan QR code within Polygon ID app to claim your 3create token!
         </p>
 
-        <div>
+        <div style={{ align: "center" }}>
           <QRCodeSVG level="Q" value={JSON.stringify(qrProofRequestJson)} />
         </div>
         <br />
