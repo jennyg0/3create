@@ -20,15 +20,22 @@ let value = alchemy.core
   .getTokenBalances(userAddress, [createTokenContract])
   .then(console.log);
 
+//const notConnected =
+
 function App() {
   const { isConnected } = useAccount();
 
   return (
     <div className="App">
-      <WithSubnavigation />
-      <SplitScreen />
-      <SplitWithImage />
-      {/* <VerifyAge /> */}
+      {isConnected ? (
+        <SidebarWithHeader />
+      ) : (
+        <div>
+          <WithSubnavigation />
+          <SplitScreen />
+          <SplitWithImage />
+        </div>
+      )}
     </div>
   );
 }

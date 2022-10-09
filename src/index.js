@@ -12,6 +12,16 @@ const config = {
   accentColor: "teal",
   ethereum: {
     appName: "3create",
+    chains: [
+      {
+        id: 80001,
+        name: "Polygon Testnet Mumbai",
+        network: "mumbai",
+        rpcUrls: {
+          default: "https://rpc-mumbai.maticvigil.com",
+        },
+      },
+    ],
   },
 };
 
