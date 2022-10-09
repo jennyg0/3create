@@ -38,6 +38,14 @@ import logo from "../images/shuggy.svg";
 import { Network, Alchemy } from "alchemy-sdk";
 import welcome from "../images/welcome.png";
 import question from "../images/question.png";
+import { PPlayer } from "./PPlayer";
+
+import {
+  LivepeerConfig,
+  ThemeConfig,
+  createReactClient,
+  studioProvider,
+} from "@livepeer/react";
 
 const LinkItems = [
   { name: "Home", icon: FiHome },
@@ -89,6 +97,8 @@ export default function SidebarWithHeader({ children }) {
           </div>
         ) : (
           <div>
+            <PPlayer />
+
             <img src={question} className="welcome" alt="logo" />
             <Link href="/mint">
               <Button style={{ backgroundColor: "#BBB2FF" }}>Submit</Button>

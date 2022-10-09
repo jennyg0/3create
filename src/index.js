@@ -6,6 +6,13 @@ import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Web3Modal } from "@web3modal/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  LivepeerConfig,
+  ThemeConfig,
+  createReactClient,
+  studioProvider,
+} from "@livepeer/react";
+import { PPlayer } from "./components/PPlayer";
 
 const config = {
   projectId: "9338b83ff89083cd0ee7da8cea475c23",
@@ -25,16 +32,32 @@ const config = {
     ],
   },
 };
+const livepeerClient = createReactClient({
+  provider: studioProvider({
+    apiKey: "11474118-f6d4-42eb-a9bb-7949fc183a93",
+  }),
+});
+
+const theme = {
+  colors: {
+    accent: "rgb(0, 145, 255)",
+    containerBorderColor: "rgba(0, 145, 255, 0.9)",
+  },
+  fonts: {
+    display: "Inter",
+  },
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ChakraProvider>
-    <React.StrictMode>
-      <App />
-
-      <Web3Modal config={config} />
-    </React.StrictMode>
-  </ChakraProvider>
+  <LivepeerConfig client={livepeerClient} theme={theme}>
+    <ChakraProvider>
+      <React.StrictMode>
+        <App />
+        <Web3Modal config={config} />
+      </React.StrictMode>
+    </ChakraProvider>
+  </LivepeerConfig>
 );
 
 // If you want to start measuring performance in your app, pass a function
