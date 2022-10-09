@@ -24,9 +24,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-## Medium Article
+## Socials
 
-https://medium.com/@vaidasa/3create-1st-web3-education-platform-for-kids-60c5415097a4
+Instagram & Twitter: @3create\_
+
+Article: https://medium.com/@vaidasa/3create-1st-web3-education-platform-for-kids-60c5415097a4
 
 ### Technical Bounties
 
